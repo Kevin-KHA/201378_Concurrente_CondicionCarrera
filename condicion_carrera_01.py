@@ -3,10 +3,9 @@ import threading
 import time
 import random
 
-#definimos una lista de los coredores
-
+#método para manejo del tiempo
 def recorrer_Metraje(x):
-    tiempo_recorrido = random.randint(1, 7)
+    tiempo_recorrido = random.randint(1, 7)#tiempo que recorre el circuito cada corredor
     x.dar_Relevo(tiempo_recorrido)
 
 
@@ -20,17 +19,16 @@ class Circuito_Relevo:
 
         try:
             self.bandera_Corredor +=1
-            print(f"El corredor#{self.bandera_Corredor} ha uniciado su recorrido")
-            time.sleep(espera_relevo)
+            print(f"El corredor#{self.bandera_Corredor} ha uniciado su recorrido")#sale de su puesto
+            time.sleep(espera_relevo)#competidor corriedo
 
         finally:
             if self.bandera_Corredor < 4:
-                print(f"El corredor#{self.bandera_Corredor} dio relevo al siguiente"+"\n")
+                print(f"El corredor#{self.bandera_Corredor} dio relevo al siguiente"+"\n")#llegó a dar relevo
             else:
                 print(f"El corredor#{self.bandera_Corredor} (último relevado) llegó a la meta" + "\n")
-                print("Circuito completado")
+                print(">>>Circuito completado<<<")
             self.locked.release()
-
 
 
 if __name__ == '__main__':
