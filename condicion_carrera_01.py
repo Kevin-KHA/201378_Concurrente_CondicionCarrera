@@ -5,8 +5,8 @@ import random
 
 #método para manejo del tiempo
 def recorrer_Metraje(x):
-    tiempo_recorrido = random.randint(1, 7)#tiempo que recorre el circuito cada corredor
-    x.dar_Relevo(tiempo_recorrido)
+    tiempo_corriendo = random.randint(1, 7)#tiempo que recorre el circuito cada corredor
+    x.dar_Relevo(tiempo_corriendo)
 
 
 class Circuito_Relevo:
@@ -20,7 +20,7 @@ class Circuito_Relevo:
         try:
             self.bandera_Corredor +=1
             print(f"El corredor#{self.bandera_Corredor} ha uniciado su recorrido")#sale de su puesto
-            time.sleep(espera_relevo)#competidor corriedo
+            time.sleep(espera_relevo)#competidor corriendo
 
         finally:
             if self.bandera_Corredor < 4:
